@@ -402,7 +402,7 @@ We hope to see you there!
               <span>📅</span>
               <p>
                 <b>Date</b>
-                December 25, 2026
+                December 21,2026
               </p>
             </div>
 

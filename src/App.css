@@ -1,0 +1,1029 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: #071b12;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================
+   MAIN BACKGROUND
+========================= */
+
+.christmas {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=1600');
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 90px 24px 40px;
+
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* =========================
+   SNOWFALL
+========================= */
+
+.snow-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.snowflake {
+  position: absolute;
+  top: -30px;
+  color: white;
+  opacity: .85;
+  text-shadow: 0 0 8px white;
+
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: .9;
+  }
+
+  50% {
+    transform: translate3d(45px, 50vh, 0) rotate(180deg);
+  }
+
+  100% {
+    transform: translate3d(-30px, 110vh, 0) rotate(360deg);
+    opacity: .2;
+  }
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 30;
+
+  padding: 12px 22px;
+
+  background: #c62828;
+  color: white;
+
+  border: 1px solid #e6c15a;
+  border-radius: 30px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.music-button:hover {
+  background: #e6b800;
+  color: #222;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MAIN CARDS
+========================= */
+
+.card,
+.invitation {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+  max-width: 650px;
+
+  padding: clamp(30px, 5vw, 55px);
+
+  text-align: center;
+
+  background: rgba(10, 48, 32, .96);
+
+  border: 2px solid #d4af37;
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,.55),
+    0 0 25px rgba(212,175,55,.15);
+
+  animation: cardAppear .8s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.top-decoration {
+  font-size: clamp(30px, 5vw, 45px);
+  margin-bottom: 12px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bottom-decoration {
+  margin-top: 30px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(46px, 6vw, 72px);
+  color: #ffd700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+h2 {
+  color: #fff0b3;
+  margin: 22px 0 15px;
+  font-size: clamp(20px, 2.5vw, 27px);
+  line-height: 1.4;
+}
+
+.subtitle {
+  color: white;
+  font-size: clamp(15px, 1.8vw, 19px);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+
+input {
+  display: block;
+  width: 100%;
+  min-height: 60px;
+
+  padding: 15px 18px;
+  margin: 25px 0;
+
+  border-radius: 13px;
+  border: 1.5px solid #d4af37;
+
+  background: #fff !important;
+  color: #222 !important;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+
+  outline: none;
+  opacity: 1;
+}
+
+input::placeholder {
+  color: #777 !important;
+  opacity: 1;
+}
+
+input:focus {
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 15px rgba(255,215,0,.4);
+}
+
+input[type="date"] {
+  color: #222 !important;
+  color-scheme: light;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+input[type="text"] {
+  color: #222 !important;
+  background: white !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.main-button {
+  width: auto;
+  max-width: 100%;
+  min-height: 52px;
+
+  background: #c62828;
+  color: white;
+
+  padding: 15px 32px;
+
+  border: none;
+  border-radius: 40px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.main-button:hover {
+  background: #e6b800;
+  color: #222;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255,215,0,.3);
+}
+
+.error {
+  color: #ffaaaa !important;
+  font-size: 14px !important;
+  margin: 12px 0;
+}
+
+/* =========================
+   GIFT OPENING
+========================= */
+
+.gift-card {
+  overflow: hidden;
+}
+
+.gift-container {
+  position: relative;
+
+  width: 220px;
+  height: 220px;
+
+  margin: 40px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  animation: giftFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes giftFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+.gift-glow {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+
+  background: rgba(255,215,0,.2);
+  border-radius: 50%;
+  filter: blur(35px);
+
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: scale(.8);
+    opacity: .4;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: .9;
+  }
+}
+
+.gift-box {
+  position: relative;
+  width: 150px;
+  height: 130px;
+  z-index: 2;
+}
+
+.gift-body {
+  position: absolute;
+  bottom: 0;
+
+  width: 150px;
+  height: 100px;
+
+  background: linear-gradient(135deg, #e52b32, #990b17);
+  border: 2px solid #ffd700;
+  border-radius: 5px;
+
+  box-shadow: 0 12px 20px rgba(0,0,0,.35);
+}
+
+.gift-ribbon {
+  position: absolute;
+  left: 57px;
+  width: 30px;
+  height: 100%;
+
+  background: linear-gradient(90deg, #ffdb58, #fff1a0, #d4af37);
+}
+
+.gift-lid {
+  position: absolute;
+  top: 5px;
+  left: -7px;
+
+  width: 164px;
+  height: 35px;
+
+  background: linear-gradient(135deg, #ff4242, #a60012);
+  border: 2px solid #ffd700;
+  border-radius: 6px;
+
+  z-index: 3;
+  transition: transform .8s ease;
+}
+
+.gift-bow {
+  position: absolute;
+  top: -40px;
+  left: 48px;
+  font-size: 45px;
+}
+
+.gift-container:hover .gift-lid {
+  transform: translateY(-12px) rotate(-8deg);
+}
+
+.gift-reveal {
+  animation: revealGift 1s ease;
+}
+
+@keyframes revealGift {
+  0% {
+    transform: scale(.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.gift-sparkle {
+  font-size: 40px;
+  margin-bottom: 20px;
+  animation: float 2s infinite;
+}
+
+/* =========================
+   PREMIUM INVITATION
+========================= */
+
+.invitation {
+  width: 100%;
+  max-width: 780px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(150,30,35,.96),
+      rgba(65,8,18,.98)
+    );
+
+  border: 3px solid #e6c15a;
+
+  box-shadow:
+    0 0 25px rgba(255,215,0,.2),
+    0 0 60px rgba(0,0,0,.5);
+
+  animation: invitationAppear 1.2s ease;
+}
+
+@keyframes invitationAppear {
+  from {
+    opacity: 0;
+    transform: scale(.85) translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.invitation h1 {
+  font-size: clamp(48px, 7vw, 82px);
+  text-shadow: 0 0 20px rgba(255,215,0,.5);
+}
+
+.invitation h2 {
+  color: #ffdf8b;
+}
+
+.invitation-label {
+  color: #ffdf8b;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.invitation-sparkles {
+  font-size: 27px;
+  letter-spacing: 10px;
+  margin: 15px 0;
+  animation: float 3s infinite;
+}
+
+.gold-line {
+  height: 2px;
+  width: 70%;
+  margin: 20px auto;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffd700,
+    #fff1a0,
+    #ffd700,
+    transparent
+  );
+}
+
+.invite-text {
+  line-height: 1.9;
+  font-size: 16px;
+  margin: 25px 0;
+  color: #fff5df;
+}
+
+/* =========================
+   EVENT DETAILS
+========================= */
+
+.event-details {
+  background: rgba(0,0,0,.22);
+  border: 1px solid #e6c15a;
+  border-radius: 18px;
+
+  padding: 25px;
+  margin: 25px 0;
+
+  text-align: left;
+}
+
+.event-details h2 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 5px;
+
+  border-bottom: 1px solid rgba(230,193,90,.2);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span {
+  font-size: 25px;
+  flex-shrink: 0;
+}
+
+.detail-row p {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: white;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.detail-row b {
+  color: #ffdf8b;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+  margin: 35px 0;
+}
+
+.countdown-section h2 {
+  font-size: 27px;
+}
+
+.countdown-section > p {
+  color: #ffe9b2;
+  margin: 12px 0 20px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.countdown-box {
+  background: rgba(0,0,0,.35);
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+
+  padding: 17px 5px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  animation: countdownGlow 3s infinite alternate;
+}
+
+@keyframes countdownGlow {
+  from {
+    box-shadow: 0 0 3px rgba(255,215,0,.1);
+  }
+
+  to {
+    box-shadow: 0 0 15px rgba(255,215,0,.25);
+  }
+}
+
+.countdown-box strong {
+  color: #ffd700;
+  font-size: 32px;
+}
+
+.countdown-box span {
+  color: white;
+  font-size: 12px;
+}
+
+/* =========================
+   CELEBRATION
+========================= */
+
+.celebration-text {
+  color: #ffd700;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 30px 0 20px;
+}
+
+.invite-footer {
+  color: white;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+.footer {
+  color: #ffdf8b;
+  font-style: italic;
+  margin-top: 25px;
+}
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp-button {
+  width: 100%;
+  min-height: 52px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  background: #128c50;
+  color: white;
+
+  border: 1px solid #7de0a4;
+  border-radius: 35px;
+
+  padding: 16px 20px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.whatsapp-button:hover {
+  background: #075e35;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(18,140,80,.35);
+}
+
+/* =================================
+   LARGE LAPTOPS AND DESKTOPS
+================================= */
+
+@media (min-width: 1200px) {
+
+  .card {
+    max-width: 680px;
+  }
+
+  .invitation {
+    max-width: 800px;
+  }
+
+  .christmas {
+    padding: 100px 40px 50px;
+  }
+
+}
+
+/* =================================
+   SMALL LAPTOPS
+================================= */
+
+@media (min-width: 769px) and (max-width: 1199px) {
+
+  .card {
+    max-width: 600px;
+  }
+
+  .invitation {
+    max-width: 700px;
+  }
+
+  .christmas {
+    padding: 90px 25px 40px;
+  }
+
+}
+
+/* =================================
+   TABLETS
+================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+  .card,
+  .invitation {
+    max-width: 620px;
+    padding: 38px 28px;
+  }
+
+  .invitation h1 {
+    font-size: 60px;
+  }
+
+  .countdown-box strong {
+    font-size: 26px;
+  }
+
+  .christmas {
+    padding: 85px 20px 35px;
+    background-attachment: scroll;
+  }
+
+}
+
+/* =================================
+   MOBILE PHONES
+================================= */
+
+@media (max-width: 600px) {
+
+  .christmas {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    padding:
+      max(80px, env(safe-area-inset-top))
+      14px
+      max(25px, env(safe-area-inset-bottom));
+
+    background-attachment: scroll;
+    background-position: center;
+
+    align-items: center;
+  }
+
+  .music-button {
+    top: max(12px, env(safe-area-inset-top));
+    right: 12px;
+
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .card,
+  .invitation {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 32px 19px;
+
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: clamp(40px, 11vw, 52px);
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+
+  input {
+    min-height: 55px;
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .main-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 14px 15px;
+  }
+
+  .bottom-decoration {
+    font-size: 19px;
+    letter-spacing: 5px;
+  }
+
+  /* Gift */
+
+  .gift-container {
+    width: 190px;
+    height: 190px;
+    margin: 30px auto;
+  }
+
+  .gift-glow {
+    width: 170px;
+    height: 170px;
+  }
+
+  .gift-box {
+    transform: scale(.85);
+  }
+
+  /* Invitation */
+
+  .invitation {
+    padding: 30px 18px;
+  }
+
+  .invitation h1 {
+    font-size: clamp(43px, 12vw, 58px);
+  }
+
+  .invitation h2 {
+    font-size: 20px;
+  }
+
+  .invitation-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .invitation-sparkles {
+    font-size: 19px;
+    letter-spacing: 5px;
+  }
+
+  .invite-text {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* Event */
+
+  .event-details {
+    padding: 18px 14px;
+    margin: 20px 0;
+  }
+
+  .event-details h2 {
+    font-size: 18px;
+  }
+
+  .detail-row {
+    gap: 12px;
+  }
+
+  .detail-row span {
+    font-size: 21px;
+  }
+
+  .detail-row p {
+    font-size: 13px;
+  }
+
+  /* Countdown */
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .countdown-box {
+    padding: 12px 2px;
+    min-width: 0;
+  }
+
+  .countdown-box strong {
+    font-size: clamp(17px, 5vw, 23px);
+  }
+
+  .countdown-box span {
+    font-size: 9px;
+  }
+
+  .celebration-text {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  /* WhatsApp */
+
+  .whatsapp-button {
+    min-height: 50px;
+    padding: 12px 10px;
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .footer {
+    font-size: 13px;
+  }
+
+}
+
+/* =================================
+   EXTRA SMALL PHONES
+================================= */
+
+@media (max-width: 380px) {
+
+  .card,
+  .invitation {
+    padding: 27px 14px;
+  }
+
+  h1 {
+    font-size: 39px;
+  }
+
+  .invitation h1 {
+    font-size: 43px;
+  }
+
+  .countdown {
+    gap: 4px;
+  }
+
+  .countdown-box strong {
+    font-size: 17px;
+  }
+
+  .countdown-box span {
+    font-size: 8px;
+  }
+
+  .whatsapp-button {
+    font-size: 11px;
+  }
+
+}
+
+/* =================================
+   MOBILE LANDSCAPE
+================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .christmas {
+    align-items: flex-start;
+    padding-top: 75px;
+  }
+
+  .card,
+  .invitation {
+    margin: 15px auto;
+  }
+
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .snowflake,
+  .gift-container,
+  .gift-glow,
+  .top-decoration,
+  .invitation-sparkles,
+  .countdown-box {
+    animation: none !important;
+  }
+
+  * {
+    scroll-behavior: auto !important;
+  }
+
+}
